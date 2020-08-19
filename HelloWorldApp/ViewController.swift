@@ -10,11 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var showTextButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        textLabel.isHidden = true
+        showTextButton.layer.cornerRadius = 8
     }
-
-
+    
+    @IBAction func showLabel() {
+        if textLabel.isHidden {
+            textLabel.isHidden = false
+            showTextButton.setTitle("Скрыть текст", for: .normal)
+        } else {
+            textLabel.isHidden = true
+            showTextButton.setTitle("Показать текст", for: .normal)
+        }
+    }
 }
 
